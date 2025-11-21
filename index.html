@@ -1,9 +1,21 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="ja">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>UTAGE SOCIONICS LAB</title>
+
+<!-- ========== OGP（SNSシェア時のプレビュー表示） ========== -->
+<meta property="og:title" content="UTAGE SOCIONICS LAB">
+<meta property="og:description" content="Socionics Tools & Resources">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://utage-jpg.github.io/UTAGE-SOCIONICS-LAB/">
+<meta property="og:image" content="https://utage-jpg.github.io/socioimage1/sosiopdf_preview.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="UTAGE SOCIONICS LAB">
+<meta name="twitter:description" content="Socionics Tools & Resources">
+<meta name="twitter:image" content="https://utage-jpg.github.io/socioimage1/sosiopdf_preview.png">
 
 <style>
 /* ======== BASE ======== */
@@ -90,6 +102,34 @@ img { width: 100%; height: auto; display: block; }
   color: #000;
 }
 
+/* HERO 内容並び */
+.hero-inner {
+  display:flex;
+  justify-content:space-between;
+  align-items:stretch;
+  width:100%;
+  max-width:1500px;
+  margin:auto;
+  padding:40px 60px;
+  position:relative;
+  z-index:2;
+  gap:90px;
+}
+
+/* プロフィール */
+.hero-profile {
+  flex:0 0 430px;
+  padding:32px;
+  border-radius:16px;
+  background:rgba(0,0,0,0.50);
+  backdrop-filter:blur(4px);
+  color:#fff;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:22px;
+}
+
 /* ======== SECTION TITLE ======== */
 .section-title {
   font-size: 28px;
@@ -119,14 +159,6 @@ img { width: 100%; height: auto; display: block; }
   padding: 30px;
   transition: 0.3s;
 }
-.tool-card h3 {
-  font-size: 20px;
-  margin-bottom: 16px;
-}
-.tool-card p {
-  font-size: 14px;
-  line-height: 1.8;
-}
 .tool-card:hover {
   background: #111;
   color: #fff;
@@ -147,7 +179,7 @@ footer {
   font-size: 14px;
 }
 
-/* ======== ANIMATION (scroll fade-in) ======== */
+/* ======== Fade animation ======== */
 .fade {
   opacity: 0;
   transform: translateY(40px);
@@ -161,7 +193,18 @@ footer {
 /* ======== RESPONSIVE ======== */
 @media (max-width: 768px) {
   section { padding: 80px 6%; }
-  .hero-content { padding: 28px 24px; }
+
+  .hero-inner {
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px;
+  }
+
+  .hero-profile {
+    width:100%;
+    max-width:100%;
+  }
+
   .hero-title { font-size: 32px; }
   .hero-sub { font-size: 15px; }
 }
@@ -171,10 +214,9 @@ footer {
 <body>
 
 <!-- ================= HERO ================= -->
-<!-- ================= HERO ================= -->
-<!-- ================= HERO ================= -->
 <section class="hero fade">
- <!-- 背景スライドショー -->
+
+  <!-- 背景スライドショー -->
   <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1520880867055-1e30d1cb001c');"></div>
   <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1601597111158-2fceff49259b');"></div>
   <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1545239351-1141bd82e8a6');"></div>
@@ -182,69 +224,31 @@ footer {
   <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29');"></div>
 
   <!-- 左右レイアウト -->
-  <div class="hero-inner" style="
-    display:flex;
-    justify-content:space-between;
-    align-items:stretch;              /* ← 高さ揃え */
-    width:100%;
-    max-width:1500px;
-    margin:auto;
-    padding:40px 60px;
-    position:relative;
-    z-index:2;
-    gap:90px;                         /* ← 左右の距離をさらに確保 */
-  ">
+  <div class="hero-inner">
 
     <!-- 左：タイトル -->
-    <div class="hero-content" style="
-      flex:1;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-    ">
+    <div class="hero-content" style="flex:1;">
       <h1 class="hero-title">UTAGE SOCIONICS LAB</h1>
       <div class="hero-sub">“Socionics Tools & Resources.”</div>
 
       <div class="hero-links">
-        <a href="https://utage-jpg.github.io/jouhouyouso3/" target="_blank">TOOL①</a>
-        <a href="https://utage-jpg.github.io/socionix.utage/" target="_blank">TOOL②</a>
+        <a href="https://utage-jpg.github.io/jouhouyouso3/" target="_blank">Tool 1</a>
+        <a href="https://utage-jpg.github.io/socionix.utage/" target="_blank">Tool 2</a>
         <a href="#gallery">Gallery</a>
         <a href="#resources">Resources</a>
       </div>
     </div>
 
-    <!-- 右：アイコン ＋ 名前 ＋ 自己紹介 -->
-    <div class="hero-profile" style="
-      flex:0 0 430px;
-      padding:32px;
-      border-radius:16px;
-      background:rgba(0,0,0,0.50);
-      backdrop-filter:blur(4px);
-      color:#fff;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;         /* ← 左と上下位置揃え */
-      gap:22px;
-    ">
+    <!-- 右：プロフィール -->
+    <div class="hero-profile">
 
       <!-- アイコン + 名前（横並び） -->
-      <div style="
-        display:flex;
-        align-items:center;
-        gap:18px;
-      ">
-        <!-- 丸く切り抜いたアイコン -->
-        <div style="
-          width:90px;
-          height:90px;
-          border-radius:50%;
-          overflow:hidden;
-        ">
-          <img src="icon.jpg"
+      <div style="display:flex; align-items:center; gap:18px;">
+        <div style="width:90px; height:90px; border-radius:50%; overflow:hidden;">
+          <img src="https://utage-jpg.github.io/socioimage1/icon.jpg"
                style="width:100%; height:100%; object-fit:cover;">
         </div>
 
-        <!-- 名前 -->
         <div style="font-size:20px; font-weight:600;">
           サイト管理者：宴
         </div>
@@ -260,8 +264,7 @@ footer {
     </div>
 
   </div>
- </section>
-
+</section>
 
 <!-- ================= PDF PREVIEW ================= -->
 <section id="pdf-preview" class="fade">
@@ -270,21 +273,18 @@ footer {
   <div style="max-width:900px; margin:auto;">
     <div class="pdf-card">
 
-      <!-- プレビュー画像（カラー） -->
+      <!-- プレビュー画像 -->
       <a href="https://utage-jpg.github.io/socioimage1/sosiopdf.pdf" target="_blank" style="flex:1 1 260px;">
-        <img src="https://utage-jpg.github.io/socioimage1/sosiopdf_preview.png"
-             alt="socionics pdf preview">
+        <img src="https://utage-jpg.github.io/socioimage1/sosiopdf_preview.png">
       </a>
 
-      <!-- 説明 -->
       <div style="flex:1 1 260px; line-height:1.9; font-size:15px;">
-        <p>
-          ソシオニクスについて、全体像を分かりやすくスライド形式でまとめています。  
-          ソシオニクスの基本知識を学びたい方は、まずこちらをご参照ください。
-        </p>
+        ソシオニクスについて、全体像を分かりやすくスライド形式でまとめています。
+        ソシオニクスの基本知識を学びたい方は、まずこちらをご参照ください。
+
         <p style="margin-top:20px;">
           <a href="https://utage-jpg.github.io/socioimage1/sosiopdf.pdf" target="_blank"
-             style="padding:12px 26px; border:1px solid #111; display:inline-block; margin-top:10px;">
+             style="padding:12px 26px; border:1px solid #111; display:inline-block;">
              PDF を開く
           </a>
         </p>
@@ -300,27 +300,21 @@ footer {
 
   <div class="tools-grid">
 
-    <!-- TOOL 1 -->
     <a class="tool-card" href="https://utage-jpg.github.io/jouhouyouso3/" target="_blank">
-      <img src="https://utage-jpg.github.io/socioimage1/sosiopdf_preview2.png"
-           alt="tool preview 1"
-           style="margin-bottom:20px;">
+      <img src="https://utage-jpg.github.io/socioimage1/sosiopdf_preview2.png" style="margin-bottom:20px;">
       <h3>機能 × 情報要素ビューア</h3>
       <p>
-        情報要素・ブロック構造・モデルAを体系的に整理し、  
+        情報要素・ブロック構造・モデルAを体系的に整理し、
         タイプ別にソシオニクスを理解できる総合ビューアです。
       </p>
     </a>
 
-    <!-- TOOL 2 -->
     <a class="tool-card" href="https://utage-jpg.github.io/socionix.utage/" target="_blank">
-      <img src="https://utage-jpg.github.io/socioimage1/sosiopdf_preview4.png"
-           alt="tool preview 2"
-           style="margin-bottom:20px;">
+      <img src="https://utage-jpg.github.io/socioimage1/sosiopdf_preview4.png" style="margin-bottom:20px;">
       <h3>タイプ即時ビューア×関係性</h3>
       <p>
-        関係性の解析・IE比較・タイプ相性など、  
-       検証ができるアドバンスツールです。
+        関係性の解析・IE比較・タイプ相性など、
+        検証ができるアドバンスツールです。
       </p>
     </a>
 
@@ -355,18 +349,16 @@ footer {
 </footer>
 
 <script>
-/* ===== Fade-in on Scroll ===== */
+/* ===== Fade-in ===== */
 const faders = document.querySelectorAll('.fade');
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-    }
+    if (entry.isIntersecting) entry.target.classList.add('show');
   });
 });
 faders.forEach(f => observer.observe(f));
 
-/* ===== Hero 背景スライドショー ===== */
+/* ===== Hero Slideshow ===== */
 const slides = document.querySelectorAll(".hero-bg");
 let active = 0;
 if (slides.length > 0) {
@@ -381,6 +373,3 @@ if (slides.length > 0) {
 
 </body>
 </html>
-
-
-
