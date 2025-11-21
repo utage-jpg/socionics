@@ -6,7 +6,6 @@
 <title>UTAGE SOCIONICS LAB</title>
 
 <!-- ========== OGP（SNSシェア時のプレビュー表示） ========== -->
-<!-- OGP（SNSプレビュー設定） -->
 <meta property="og:title" content="UTAGE SOCIONICS LAB">
 <meta property="og:description" content="Socionics Tools & Resources">
 <meta property="og:type" content="website">
@@ -18,7 +17,6 @@
 <meta name="twitter:title" content="UTAGE SOCIONICS LAB">
 <meta name="twitter:description" content="Socionics Tools & Resources">
 <meta name="twitter:image" content="https://utage-jpg.github.io/socioimage1/top_preview.png">
-
 
 <style>
 /* ======== BASE ======== */
@@ -45,8 +43,6 @@ img { width: 100%; height: auto; display: block; }
   overflow: hidden;
   color: #fff;
 }
-
-/* 背景レイヤー（スライド） */
 .hero-bg {
   position: absolute;
   inset: 0;
@@ -56,22 +52,16 @@ img { width: 100%; height: auto; display: block; }
   opacity: 0;
   transition: opacity 2s ease;
 }
-.hero-bg.show {
-  opacity: 1;
-}
+.hero-bg.show { opacity: 1; }
 
-/* テキスト部分 */
+/* HERO TEXT */
 .hero-content {
   position: relative;
   z-index: 2;
   padding: 40px 60px;
   display: inline-block;
   border-radius: 10px;
-  background: linear-gradient(
-    to top,
-    rgba(0,0,0,0.55),
-    rgba(0,0,0,0)
-  );
+  background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0));
 }
 .hero-title {
   font-size: 48px;
@@ -105,7 +95,7 @@ img { width: 100%; height: auto; display: block; }
   color: #000;
 }
 
-/* HERO 内容並び */
+/* HERO LAYOUT */
 .hero-inner {
   display:flex;
   justify-content:space-between;
@@ -119,7 +109,7 @@ img { width: 100%; height: auto; display: block; }
   gap:90px;
 }
 
-/* プロフィール */
+/* プロフィール（PCのみ） */
 .hero-profile {
   flex:0 0 430px;
   padding:32px;
@@ -133,7 +123,7 @@ img { width: 100%; height: auto; display: block; }
   gap:22px;
 }
 
-/* ======== SECTION TITLE ======== */
+/* TITLE */
 .section-title {
   font-size: 28px;
   margin-bottom: 60px;
@@ -141,7 +131,7 @@ img { width: 100%; height: auto; display: block; }
   text-transform: uppercase;
 }
 
-/* ======== PDF CARD ======== */
+/* PDFカード */
 .pdf-card {
   border: 1px solid #111;
   padding: 40px;
@@ -151,7 +141,7 @@ img { width: 100%; height: auto; display: block; }
   flex-wrap: wrap;
 }
 
-/* ======== TOOLS ======== */
+/* TOOLS */
 .tools-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -167,14 +157,14 @@ img { width: 100%; height: auto; display: block; }
   color: #fff;
 }
 
-/* ======== GALLERY ======== */
+/* GALLERY */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 32px;
 }
 
-/* ======== FOOTER ======== */
+/* FOOTER */
 footer {
   padding: 60px 6%;
   border-top: 1px solid #111;
@@ -182,7 +172,7 @@ footer {
   font-size: 14px;
 }
 
-/* ======== Fade animation ======== */
+/* Fade animation */
 .fade {
   opacity: 0;
   transform: translateY(40px);
@@ -203,9 +193,9 @@ footer {
     padding: 20px;
   }
 
+  /* スマホでは自己紹介欄を削除 */
   .hero-profile {
-    width:100%;
-    max-width:100%;
+    display:none;
   }
 
   .hero-title { font-size: 32px; }
@@ -226,7 +216,7 @@ footer {
   <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1541701494587-cb58502866ab');"></div>
   <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29');"></div>
 
-  <!-- 左右レイアウト -->
+  <!-- HERO内 -->
   <div class="hero-inner">
 
     <!-- 左：タイトル -->
@@ -242,10 +232,8 @@ footer {
       </div>
     </div>
 
-    <!-- 右：プロフィール -->
+    <!-- 右：プロフィール（PCのみ） -->
     <div class="hero-profile">
-
-      <!-- アイコン + 名前（横並び） -->
       <div style="display:flex; align-items:center; gap:18px;">
         <div style="width:90px; height:90px; border-radius:50%; overflow:hidden;">
           <img src="https://utage-jpg.github.io/socioimage1/icon.jpg"
@@ -257,26 +245,24 @@ footer {
         </div>
       </div>
 
-      <!-- 自己紹介 -->
       <div style="line-height:1.7; font-size:14.5px; white-space:pre-line;">
         mbtiを中心に類型学を趣味で勉強しています。主にXで活動中 
         何気ない日常の出来事を類型を通して言語化するのが趣味。
         ISTJ-A / 6w5 / △612 / Ti-LSI(N) / so/sp / RCOEN
       </div>
-
     </div>
 
   </div>
 </section>
 
-<!-- ================= PDF PREVIEW ================= -->
+<!-- ================= 以下 同じ ================= -->
+
 <section id="pdf-preview" class="fade">
   <h2 class="section-title">SOCIONICS PDF</h2>
 
   <div style="max-width:900px; margin:auto;">
     <div class="pdf-card">
 
-      <!-- プレビュー画像 -->
       <a href="https://utage-jpg.github.io/socioimage1/sosiopdf.pdf" target="_blank" style="flex:1 1 260px;">
         <img src="https://utage-jpg.github.io/socioimage1/sosiopdf_preview.png">
       </a>
@@ -297,7 +283,6 @@ footer {
   </div>
 </section>
 
-<!-- ================= TOOLS ================= -->
 <section class="fade">
   <h2 class="section-title">TOOLS</h2>
 
@@ -324,7 +309,6 @@ footer {
   </div>
 </section>
 
-<!-- ================= GALLERY ================= -->
 <section id="gallery" class="fade">
   <h2 class="section-title">GALLERY</h2>
 
@@ -335,7 +319,6 @@ footer {
   </div>
 </section>
 
-<!-- ================= RESOURCES ================= -->
 <section id="resources" class="fade">
   <h2 class="section-title">RESOURCES</h2>
 
@@ -346,13 +329,11 @@ footer {
   </div>
 </section>
 
-<!-- ================= FOOTER ================= -->
 <footer>
   © UTAGE SOCIONICS LAB
 </footer>
 
 <script>
-/* ===== Fade-in ===== */
 const faders = document.querySelectorAll('.fade');
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -361,7 +342,6 @@ const observer = new IntersectionObserver(entries => {
 });
 faders.forEach(f => observer.observe(f));
 
-/* ===== Hero Slideshow ===== */
 const slides = document.querySelectorAll(".hero-bg");
 let active = 0;
 if (slides.length > 0) {
